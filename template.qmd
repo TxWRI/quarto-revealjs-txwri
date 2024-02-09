@@ -4,6 +4,7 @@ author: "YOU!"
 institute: "Texas Water Resources Institute"
 date: today
 format: txwri-revealjs
+embed-resources: true
 ---
 
 
