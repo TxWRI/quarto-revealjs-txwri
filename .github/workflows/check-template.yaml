@@ -39,8 +39,8 @@ jobs:
           
           
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Publish slides template
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          folder: .
-          branch: gh-pages
+          target: gh-pages
+          render: false
