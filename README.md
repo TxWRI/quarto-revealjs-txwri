@@ -1,5 +1,7 @@
 # Quarto TWRI revealjs theme
 
+*important:* not ready for use!
+
 A minimal presentation theme for the institute.
 
 ## Use
