@@ -263,7 +263,7 @@ $selection-bg: #26351c !default;
 .reveal .slide-logo {
   display: block !important;
   position: fixed !important;
-  max-height: 10% !important;
+  max-height: 8% !important;
   height: 100% !important;
   width: auto !important;
   color: $body-color !important;
@@ -276,7 +276,8 @@ $selection-bg: #26351c !default;
   display: block;
   bottom: 0px !important;
    width: 100px;
-   height: 120px;
+   max-height: 10% !important;
+   height: 100% !important;
    padding: 0px;
    //border: 1px solid blue;
    background-color: $twri-blue;
