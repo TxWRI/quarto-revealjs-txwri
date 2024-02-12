@@ -1,8 +1,14 @@
 ---
 title: "YOUR TITLE"
-author: "YOU!"
-institute: "Texas Water Resources Institute"
+author:
+   # can add multiple authors or remove any of the following lines
+ - name: First Last
+   orcid: 0000-0000-0000-0000
+   email: twri@tamu.edu
+   affiliation: Texas Water Resources Institute, Texas A&M AgriLife Research
 date: today
+
+# I do not reccomend changing the following:
 format: txwri-revealjs
 embed-resources: true
 ---
