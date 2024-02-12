@@ -15,3 +15,6 @@ or if starting from scratch:
 ```bash
 quarto use extension txwri/quarto-revealjs-txwri
 ```
+
+This template is based largely on the Quarto ['clean' template](https://github.com/grantmcdermott/quarto-revealjs-clean).
+
