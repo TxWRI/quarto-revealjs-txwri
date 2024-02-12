@@ -16,7 +16,7 @@ $font-family-sans-serif: "Open Sans", sans-serif !default;
 $presentation-heading-font: "Oswald", sans-serif !default;
 
 
-$presentation-heading-color: $twri-blue !default;
+//$presentation-heading-color: $twri-blue !default;
 $presentation-heading-font-weight: 700;
 //$presentation-heading-line-height: 2;
 //$presentation-block-margin: 28px;
@@ -47,7 +47,7 @@ $selection-bg: #26351c !default;
   text-align: left;
 
   .title {
-    color: $twri-blue;
+    //color: $twri-blue;
     font-size: 1.4em;
     font-weight: 400
   }
@@ -69,7 +69,7 @@ $selection-bg: #26351c !default;
 
   .author,
   .quarto-title-author-name {
-    color: $body-color;
+    //color: $body-color;
   }
 
   .quarto-title-authors {
@@ -246,3 +246,39 @@ $selection-bg: #26351c !default;
   height: auto;
   object-fit: contain;
 }
+
+// Slide numbers to the bottom-left
+.slide-number, .reveal.has-logo .slide-number {
+  bottom: 14px !important;
+  left: 50px !important;
+  top: unset !important;
+  color: #777777 !important;
+}
+
+// preveent slide numbers from appearing on title slide
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}
+
+.reveal .slide-logo {
+  display: block !important;
+  position: fixed !important;
+  max-height: 10% !important;
+  height: 100% !important;
+  width: auto !important;
+  color: $body-color !important;
+  z-index: 2 !important;
+}
+
+// footer
+.reveal .footer {
+  color: $accent2 !important;
+  display: block;
+  bottom: 0px !important;
+   width: 100px;
+   height: 120px;
+   padding: 0px;
+   //border: 1px solid blue;
+   background-color: $twri-blue;
+   z-index: 0 !important; 
+ }
