@@ -1,7 +1,8 @@
 @font-face {
     font-family: 'Open Sans';
     src: local(''),
-         url("fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf") format('ttf');
+         url("fonts/Open_Sans/opensans-variablefont_wdthwght-webfont.woff2") format('woff2-variations'),
+         url("fonts/Open_Sans/opensans-variablefont_wdthwght-webfont.woff") format('woff-variations');
     font-style: normal;
     font-weight: 400 700;
   }
@@ -9,7 +10,8 @@
   @font-face {
     font-family: 'Open Sans';
     src: local(''),
-         url("fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf") format('ttf');
+         url("fonts/Open_Sans/opensans-italic-variablefont_wdthwght-webfont.woff2") format('woff2-variations'),
+         url("fonts/Open_Sans/opensans-italic-variablefont_wdthwght-webfont.woff") format('woff-variations');
     font-style: italic;
     font-weight: 400 700;
   }
@@ -17,7 +19,8 @@
   @font-face {
     font-family: 'Oswald';
     src: local(''),
-         url("fonts/Oswald/Oswald-VariableFont_wght.ttf") format('ttf');
+         url("fonts/Oswald/oswald-variablefont_wght-webfont.woff2") format('woff2-variations'),
+         url("fonts/Oswald/oswald-variablefont_wght-webfont.woff") format('woff-variations');
     font-style: normal;
     font-weight: 300 700;
   }
