@@ -8,10 +8,30 @@ author:
    affiliation: Texas Water Resources Institute, Texas A&M AgriLife Research
 date: today
 
-# I do not reccomend changing the following:
 format: txwri-revealjs
 embed-resources: true
 ---
+
+
+## Install
+
+Start from scratch:
+
+```bash
+quarto install extension txwri/quarto-revealjs-txwri
+```
+
+Or install and include this template:
+
+```bash
+quarto use template txwri/quarto-revealjs-txwri
+```
+
+## Install
+
+In RStudio, install using the Terminal tab:
+
+![](terminal.png)
 
 
 ## Example slide
@@ -24,15 +44,62 @@ depending on how long it is.
 - first item 
     - A sub item
 
-Next, we'll brief review some theme-specific components.
 
-- Note that _all_ of the standard Reveal.js
-[features](https://quarto.org/docs/presentations/revealjs/)
-can be used with this theme, even if we don't highlight them here.
+## Render figures
+
+Include output from R or Python directly as figures:
+
+```{r}
+#| echo: true
+#| fig-width: 2.5
+#| fig-height: 2.5
+#| output-location: column
+
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(twriTemplates)
+library(scico)
+
+
+data("volcano")
+
+volcano |> 
+  as_tibble(.name_repair = "universal") |> 
+  mutate(latitude = 1:n()) |> 
+  pivot_longer(!latitude, names_to = "longitude", values_to = "altitude") |> 
+  mutate(longitude = longitude |>  
+           str_remove("[\\.]{3}") |> 
+           as.numeric()) |> 
+  ggplot() +
+  geom_contour_filled(aes(latitude, longitude, z = altitude),
+                      bins = 20) +
+  scale_fill_scico_d(palette = "batlowW") +
+  theme_void() +
+  theme(legend.position = "none")
+
+```
+
+
+## Math
+
+Feel free to include some math:
+$$
+\left( \prod_{i=1}^{n} \right)^{\frac{1}{n}} =\sqrt[n]{x_1, x_2, ... x_n}
+$$
+or, equivalently:
+$$
+\exp\left(\frac{1}{n} \sum_{i=1}^n \ln{a_i} \right)
+$$
+
+
+
+
 
 ## Additional theme classes
 
-### Some extra things you can do with the clean theme
+### Some extra things you can do with the txwri-revealjs theme
 
 Special classes for emphasis
 
@@ -43,43 +110,4 @@ Special classes for emphasis
 Cross-references
 
 - `.button` class provides a Beamer-like button, e.g.
-[[Summary]{.button}](#sec-summary)
-
-## Want more?
-
-### See our longer demo slides
-
-We've deliberarely kept this template lean, to get you up and running as fast as
-possible.
-
-We provide a separate
-[demo template](https://github.com/grantmcdermott/quarto-revealjs-clean-demo),
-with more examples for integrating code, tables, figures, etc.
-
-  - See the live demo slides
-  [here](https://grantmcdermott.com/quarto-revealjs-clean-demo/template.html).
-
-## Summary {#sec-summary}
-
-### A minimal and elegant presentation theme
-
-The Quarto reveal.js clean theme aims to be a minimal and elegant presention
-theme.
-
-Install the theme.
-
-```{.bash}
-quarto install extension grantmcdermott/quarto-revealjs-clean
-```
-
-Use this lean template.
-
-```{.bash}
-quarto use template grantmcdermott/quarto-revealjs-clean
-```
-
-Use the longer demo template.
-
-```{.bash}
-quarto use template grantmcdermott/quarto-revealjs-clean-demo
-```
+[[Summary]{.button}](#sec-math)
