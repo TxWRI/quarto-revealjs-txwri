@@ -38,6 +38,7 @@ jobs:
             any::knitr
             any::rmarkdown
             any::ragg
+            any::gt
 
       - uses: quarto-dev/quarto-actions/setup@v2
         with:

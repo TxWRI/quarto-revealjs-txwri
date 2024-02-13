@@ -6,7 +6,12 @@ author:
    orcid: 0000-0000-0000-0000
    email: twri@tamu.edu
    affiliation: Texas Water Resources Institute, Texas A&M AgriLife Research
+ - name: Michael Schramm
+   orcid: 0000-0003-1876-6592
+   email: michael.schramm@ag.tamu.edu
+   affiliation: Texas Water Resources Institute, Texas A&M AgriLife Research
 date: today
+bibliography: refs.bib
 
 format: txwri-revealjs
 embed-resources: true
@@ -103,7 +108,11 @@ $$
 $$
 
 
+## More info
 
+The Quarto website provides more guidance on revealjs slides and Quarto in general:
+
+https://quarto.org/docs/presentations/
 
 
 ## Additional theme classes
@@ -118,5 +127,195 @@ Special classes for emphasis
 
 Cross-references
 
-- `.button` class provides a Beamer-like button, e.g.
-[[Summary]{.button}](#sec-math)
+- `.button` class provides a Beamer-like button, e.g. [[Appendix]{.button}](#sec-appendix)
+- Quarto's native cross-ref syntax, e.g., "See @sec-appendix."
+
+## Components
+
+### Citations
+
+Citations follow the standard
+[Quarto format](https://quarto.org/docs/authoring/footnotes-and-citations.html#citations)
+and be sourced from BibLaTex, BibTeX, or CLS files. For example:
+
+ - [Topic 1:]{.alert} Stats and trends [@helselStatisticalMethodsWater2020; @schrammTotalMaximumDaily2022]
+
+- [Topic 2:]{.alert} Watershed governance [@biddleImprovingEffectivenessCollaborative2017]
+
+## Components
+
+### Blocks
+
+Quarto provides
+[dedicated environments](https://quarto.org/docs/authoring/cross-references.html#theorems-and-proofs)
+for theorems, lemmas, and so forth. 
+
+But in presentation format, it's arguably more effective just to use a
+[Callout Block](https://quarto.org/docs/authoring/callouts.html).
+
+:::{.callout-note}
+## Regression Specification
+
+The main specification is as follows:
+
+$$
+y_{it} = X_{it} \beta + \mu_i + \varepsilon_{it}
+$$
+:::
+
+## Components
+
+### Multicolumn I: Text only
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### Column 1
+
+Here is a long sentence that will wrap onto the next line as it hits the column
+width, and continue this way until it stops.
+:::
+
+::: {.column width="50%"}
+#### Column 2
+
+Some other text in another column.
+
+A second paragraph.
+:::
+
+::::
+
+Multicolumn support is very flexible and we can continue with a single full
+span column in the same slide.
+
+## Components
+
+### Multicolumn II: Text and figures
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/kanagawa.jpg)
+:::
+
+::: {.column width="50%"}
+
+- A point about the figure that is potentially important.
+- Another point about the figure that is also potentially important.
+:::
+
+::::
+
+Note that sub- and multi-panel figures are also natively supported by Quarto.
+See [here](https://quarto.org/docs/authoring/figures.html#subfigures).
+
+## Components
+
+### Multicolumn III: Code and output
+
+```{r}
+#| echo: true
+#| label: fig-pairs
+#| fig-cap: "Pairwise scatterplot" 
+#| fig-asp: 1
+#| output-location: column
+
+palette("Classic Tableau")
+
+par(
+  family = "HersheySans",
+  las = 1, pch = 19, cex = 1.5
+)
+
+pairs(
+  iris[,1:4],
+  col=iris$Species
+)
+```
+
+
+# Figures {background-color="#40666e"}
+
+## Figure
+
+![](images/kanagawa.jpg)
+
+## Figure
+
+### Full-size Figures
+
+You can use the `{.background-image}` container environment to completely fill
+the slide background with an image.
+
+Ideally, your figure will be the same aspect ratio as the screen that you're presenting on.
+
+- This can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it's probably something close to 16:9.
+- Aspect ratio can also matter for a regular full-frame images (previous slide).
+
+## {background-image="images/kanagawa.jpg" background-size="100%"}
+
+
+# Tables
+
+## Table
+
+Quarto provides support for creating tables with markdown, html, R, Python and more: [https://quarto.org/docs/authoring/tables.html](https://quarto.org/docs/authoring/tables.html)
+
+## Table
+With a little effort you can create amazing html tables using the [gt](https://gt.rstudio.com) R package.
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(gt)
+countrypops |>
+  pivot_wider(names_from = year, 
+              names_prefix = "year_",
+              values_from = population) |>
+  mutate(ratio = log(year_2021/year_1960),
+         change = year_2021-year_1960) |>
+  arrange(desc(change)) |>
+  head(50) |>
+  gt(id = "one") |>
+  cols_hide(c(country_code_2, country_code_3)) |>
+  cols_nanoplot(columns = starts_with("year"),
+                new_col_name = "nanoplots",
+                new_col_label = md("1960-2021 Trend"),
+                options = nanoplot_options(data_point_fill_color = "#5d0025",
+                                           data_area_fill_color = "#5d0025")) |>
+  tab_header(title = md("**Global Population Increase**"),
+             subtitle= md("Top 50 countries by total population change (1960-2020)")) |>
+  fmt_number(columns = ratio) |>
+  fmt_integer(columns = change) |>
+  cols_label(country_name = "Country",
+             ratio = "Log Ratio (2021:1960)",
+             change = "Population Increase") |>
+  opt_table_font(font = list(google_font(name = "Open Sans"),
+                             "Arial", "sans serif")) |>
+  opt_interactive(page_size_default = 5,
+                  use_text_wrapping = FALSE,
+                  use_compact_mode = TRUE,
+                  use_highlight = TRUE) |>
+  opt_css(css = "
+    #one .reactable {
+      font-size: 18px !important;
+    }
+    #one .gt_title {
+      font-size: 26px !important;
+    }
+    #one .gt-subtitle {
+      font-size: 22px !important;
+    }
+  ")
+
+```
+
+## References
+
+::: {#refs}
+:::
+
+## Appendix {#sec-appendix}
+
+You can add an appendix after a reference slide like this.
