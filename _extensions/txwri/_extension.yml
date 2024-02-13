@@ -13,7 +13,7 @@ contributes:
       css: fonts.css
       title-slide-attributes:
         data-background-color: "#0054a4"
-      logo: "_extensions/txwri/images/twri_logo_white.png"
+      logo: "images/twri_logo_white.png"
       knitr:
         opts_chunk:
           collapse: true
