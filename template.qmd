@@ -31,7 +31,7 @@ quarto use template txwri/quarto-revealjs-txwri
 
 In RStudio, install using the Terminal tab:
 
-![](terminal.png)
+![](images/terminal.png)
 
 
 ## Example slide
@@ -77,7 +77,19 @@ volcano |>
   theme(legend.position = "none")
 
 ```
+## Render tables
 
+```{r}
+#| label: tbl-cars
+#| tbl-cap: "Cars"
+#| tbl-colwidths: [60,40]
+#| echo: true
+#| output-location: column
+
+library(knitr)
+
+kable(head(cars))
+```
 
 ## Math
 
