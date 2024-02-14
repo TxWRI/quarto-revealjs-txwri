@@ -1,15 +1,19 @@
 ---
-title: "YOUR TITLE"
+title: "YOUR AMAZING PRESENTATION TITLE"
 author:
    # can add multiple authors or remove any of the following lines
  - name: First Last
    orcid: 0000-0000-0000-0000
    email: twri@tamu.edu
-   affiliation: Texas Water Resources Institute, Texas A&M AgriLife Research
+   affiliation: |
+    | Texas Water Resources Institute,
+    | Texas A&M AgriLife Extension
  - name: Michael Schramm
    orcid: 0000-0003-1876-6592
    email: michael.schramm@ag.tamu.edu
-   affiliation: Texas Water Resources Institute, Texas A&M AgriLife Research
+   affiliation: |
+    | Texas Water Resources Institute,
+    | Texas A&M AgriLife Research
 date: today
 bibliography: refs.bib
 
@@ -36,7 +40,7 @@ quarto use template txwri/quarto-revealjs-txwri
 
 In RStudio, install using the Terminal tab:
 
-![](images/terminal.png)
+![](images/terminal.png){width="75%"}
 
 
 ## Example slide
@@ -196,7 +200,7 @@ span column in the same slide.
 :::: {.columns}
 
 ::: {.column width="50%"}
-![](images/kanagawa.jpg)
+![](images/kanagawa.jpg){width="70%"}
 :::
 
 ::: {.column width="50%"}
@@ -219,6 +223,7 @@ See [here](https://quarto.org/docs/authoring/figures.html#subfigures).
 #| label: fig-pairs
 #| fig-cap: "Pairwise scatterplot" 
 #| fig-asp: 1
+#| out-width: 75%
 #| output-location: column
 
 palette("Classic Tableau")
@@ -235,13 +240,13 @@ pairs(
 ```
 
 
-# Figures {background-color="#40666e"}
+# Figures {background-color="#0054a4"}
 
 ## Figure
 
-![](images/kanagawa.jpg)
+![](images/kanagawa.jpg){width="75%"}
 
-## Figure
+## Figure {background-image="images/kanagawa.jpg" background-size="cover" background-position="top" background-opacity="0.15"} 
 
 ### Full-size Figures
 
@@ -252,8 +257,6 @@ Ideally, your figure will be the same aspect ratio as the screen that you're pre
 
 - This can be a bit tricky because of the dynamic nature of reveal.js / HTML. But it's probably something close to 16:9.
 - Aspect ratio can also matter for a regular full-frame images (previous slide).
-
-## {background-image="images/kanagawa.jpg" background-size="100%"}
 
 
 # Tables
@@ -310,6 +313,30 @@ countrypops |>
   ")
 
 ```
+
+## Contact us
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/phone.png)
+
+:::
+
+::: {.column width="50%"}
+
+We'd love to talk about all things water
+
+- {{< fa phone >}} 979.314.2824
+
+- {{< fa envelope >}}  <a href = "mailto: twri@tamu.edu">twri@tamu.edu</a>
+
+- {{< fa computer >}}  [twri.tamu.edu](twri.tamu.edu)
+
+:::
+
+::::
 
 ## References
 
