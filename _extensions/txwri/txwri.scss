@@ -63,13 +63,6 @@ $selection-bg: #26351c !default;
   .quarto-title-affiliation,
   .quarto-title-author-email {
     font-style: italic;
-    // font-size: 80%;
-    // color: #7F7F7F;
-  }
-
-  .author,
-  .quarto-title-author-name {
-    //color: $body-color;
   }
 
   .quarto-title-authors {
@@ -87,22 +80,18 @@ $selection-bg: #26351c !default;
 
 
 .reveal h2 {
-  // font-weight: 350;
-  //font-weight: lighter;
   font-size: 1.4em;
 }
 
 .reveal h3 {
   color: $accent;
   font-style: italic;
-  // font-weight: 350;
   font-weight: lighter;
   font-size: 0.95em;
 }
 
 .reveal h4 {
   color: $accent2;
-  // font-weight: 350;
   font-weight: normal;
   margin-top: 1.25em;
 }
@@ -154,7 +143,6 @@ $selection-bg: #26351c !default;
 // Ordered lists
 
 .reveal ol {
-  // font-weight: 300;
   font-weight: lighter;
   padding-left: 16px;
 
@@ -260,6 +248,7 @@ $selection-bg: #26351c !default;
   display: none;
 }
 
+// fixed logo
 .reveal .slide-logo {
   display: block !important;
   position: fixed !important;
@@ -270,16 +259,20 @@ $selection-bg: #26351c !default;
   z-index: 2 !important;
 }
 
+
 // footer
 .reveal .footer {
   color: $accent2 !important;
-  display: block;
+  position: fixed !important;
   bottom: 0px !important;
-   width: 100px;
-   max-height: 10% !important;
-   height: 100% !important;
-   padding: 0px;
-   //border: 1px solid blue;
-   background-color: $twri-blue;
-   z-index: 0 !important; 
+  width: 100px;
+  height: 10% !important;
+  padding: 0px;
+  background-color: #fff;
+  z-index: 1 !important; 
+  opacity: 0.90
+ }
+
+ .reveal .sourceCode {
+  height: auto !important;
  }
