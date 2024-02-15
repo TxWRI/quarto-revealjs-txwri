@@ -9,6 +9,8 @@ contributes:
         - quarto-ext/fontawesome
     revealjs:
       theme: [default, txwri.scss]
+      revealjs-plugins:
+        - attribution
       menu:
         side: left
       slide-number: true

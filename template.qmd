@@ -5,15 +5,11 @@ author:
  - name: First Last
    orcid: 0000-0000-0000-0000
    email: twri@tamu.edu
-   affiliation: |
-    | Texas Water Resources Institute,
-    | Texas A&M AgriLife Extension
+   affiliation: TWRI, Texas A&M AgriLife Extension
  - name: Michael Schramm
    orcid: 0000-0003-1876-6592
    email: michael.schramm@ag.tamu.edu
-   affiliation: |
-    | Texas Water Resources Institute,
-    | Texas A&M AgriLife Research
+   affiliation: TWRI, Texas A&M AgriLife Research
 date: today
 bibliography: refs.bib
 
@@ -244,7 +240,11 @@ pairs(
 
 ## Figure
 
-![](images/kanagawa.jpg){width="75%"}
+![](images/Tres_Palacios_PHOTO_BY_ED_RHODES-001.JPG){width="75%" fig-align="center"}
+
+::: {.attribution}
+Photo courtesy of Ed Rhodes
+:::
 
 ## Figure {background-image="images/kanagawa.jpg" background-size="cover" background-position="top" background-opacity="0.15"} 
 
