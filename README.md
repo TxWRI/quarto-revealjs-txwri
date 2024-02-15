@@ -2,7 +2,7 @@
 
 [![quarto-ext-chk](https://github.com/TxWRI/quarto-revealjs-txwri/actions/workflows/check-template.yaml/badge.svg)](https://github.com/TxWRI/quarto-revealjs-txwri/actions/workflows/check-template.yaml)
 
-A minimal presentation theme for the institute.
+A minimal presentation theme for the institute. Demo slides: [https://txwri.github.io/quarto-revealjs-txwri](https://txwri.github.io/quarto-revealjs-txwri).
 
 <img src="https://raw.githubusercontent.com/TxWRI/quarto-revealjs-txwri/main/template.gif" width="50%">
 
@@ -28,6 +28,6 @@ You *will* need [quarto v1.3.0](https://quarto.org/docs/get-started/) or greater
 
 ## Changelog
 
-- v1.0.0
+### v1.0.0
 
-Initial release.
+- Initial release.
