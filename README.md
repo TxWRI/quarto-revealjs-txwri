@@ -4,7 +4,7 @@
 
 A minimal presentation theme for the institute.
 
-![](template.gif){width=40%}
+<img src="https://raw.githubusercontent.com/TxWRI/quarto-revealjs-txwri/main/template.gif" width="50%">
 
 ## Use
 
@@ -25,7 +25,6 @@ dplyr, ggplot2, gt, knitr, ragg, rmarkdown, scico, stringr, tidyr
 
 You do not necessarily need these packages if you are not rendering the examples in the template.
 You *will* need [quarto v1.3.0](https://quarto.org/docs/get-started/) or greater installed on your system.
-
 
 ## Changelog
 
